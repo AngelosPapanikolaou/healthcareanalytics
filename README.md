@@ -1,2 +1,2 @@
 # healthcareanalytics
-Some SQL queries on a healtcare database
+Some SQL queries on a healthcare database. Will update for more--
