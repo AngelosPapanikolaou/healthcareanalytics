@@ -21,7 +21,7 @@ WITH active_patients AS
 	 FROM encounters AS e
 	 JOIN patients AS pat
 	   ON e.patient = pat.id
-	 WHERE START BETWEEN '2020-01-01 00:00' and '2022-12-31 23:59'
+	 WHERE START BETWEEN '2020-01-01 00:00' AND '2022-12-31 23:59'
        AND pat.deathdate IS null
        AND EXTRACT(EPOCH FROM age('2022-12-31', pat.birthdate)) / 2592000 >= 6
 ),
@@ -52,5 +52,5 @@ FROM patients AS pat
 LEFT JOIN flu_shot_2022 AS flu
   ON pat.id = flu.patient
 WHERE 1=1
-  AND pat.id in(SELECT patient FROM active_patients)
+  AND pat.id IN(SELECT patient FROM active_patients)
   
